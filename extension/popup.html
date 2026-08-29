@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PodcastClip Capture</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <div class="brand-row">
+        <div class="brand-mark">P</div>
+        <div>
+          <strong>PodcastClip</strong>
+          <span>Capture</span>
+        </div>
+      </div>
+      <p class="eyebrow">CURRENT PAGE</p>
+      <h1 id="page-title">正在读取页面</h1>
+      <p id="page-url" class="page-url">请保持本地网页服务运行。</p>
+      <button id="open-dashboard" class="primary" disabled>在网页端处理 <span>→</span></button>
+      <p id="error" class="error hidden"></p>
+      <p class="footnote">网页端会预填 URL，确认后再加入生成队列。</p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

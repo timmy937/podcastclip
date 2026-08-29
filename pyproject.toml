@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "podcastclip"
+version = "0.1.0"
+description = "Turn YouTube videos into short AI-generated podcast audio briefs."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = [
+  "boto3>=1.35",
+  "defusedxml>=0.7.1",
+  "httpx>=0.27",
+  "python-dotenv>=1.2.2",
+  "yt-dlp>=2026.8.19",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+]
+
+[project.scripts]
+podcastclip = "podcastclip.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/timmy937/podcastclip"
+Repository = "https://github.com/timmy937/podcastclip.git"
+Issues = "https://github.com/timmy937/podcastclip/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/podcastclip"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

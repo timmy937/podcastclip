@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "PodcastClip Capture",
+  "version": "0.1.0",
+  "description": "Send the current YouTube page to the local PodcastClip web dashboard.",
+  "permissions": ["activeTab"],
+  "action": {
+    "default_title": "Send to PodcastClip",
+    "default_popup": "popup.html"
+  }
+}

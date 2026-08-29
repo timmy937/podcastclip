@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="podcastclip-api-token" content="__PODCASTCLIP_API_TOKEN__" />
+    <title>PodcastClip</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">LOCAL AUDIO WORKSPACE</p>
+          <h1>PodcastClip</h1>
+        </div>
+        <div class="local-status"><span class="status-dot"></span>本地模式</div>
+      </header>
+
+      <section class="workspace">
+        <section class="compose-panel panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">NEW BRIEF</p>
+              <h2>把一集长内容带进跑步时段</h2>
+            </div>
+            <span class="step-mark">01</span>
+          </div>
+
+          <form id="job-form">
+            <label class="field-label" for="url">YouTube URL</label>
+            <div class="url-row">
+              <input id="url" name="url" type="url" placeholder="https://www.youtube.com/watch?v=..." required autocomplete="off" />
+              <button class="primary-button" type="submit"><span>加入队列</span><span class="button-arrow">→</span></button>
+            </div>
+            <p id="capture-note" class="field-note hidden">已从 Chrome 当前页面带入 URL，请确认后加入队列。</p>
+
+            <div class="control-grid">
+              <fieldset>
+                <legend>输出语言</legend>
+                <div class="segmented" id="language-options">
+                  <button type="button" class="segment active" data-value="zh">中文</button>
+                  <button type="button" class="segment" data-value="en">English</button>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>音频时长</legend>
+                <div class="segmented duration-grid" id="duration-options">
+                  <button type="button" class="segment" data-value="quick"><strong>2</strong><span>快速</span></button>
+                  <button type="button" class="segment active" data-value="standard"><strong>5</strong><span>标准</span></button>
+                  <button type="button" class="segment" data-value="deep"><strong>8</strong><span>深度</span></button>
+                  <button type="button" class="segment" data-value="long"><strong>15</strong><span>长跑</span></button>
+                </div>
+              </fieldset>
+            </div>
+          </form>
+
+          <div class="flow-note">
+            <span class="flow-line"></span>
+            <span>转录 · 摘要 · TTS · MP3</span>
+          </div>
+        </section>
+
+        <section class="queue-panel">
+          <div class="section-heading queue-heading">
+            <div>
+              <p class="eyebrow">PROCESSING QUEUE</p>
+              <h2>生成记录</h2>
+            </div>
+            <span id="job-count" class="count-badge">0</span>
+          </div>
+          <div id="queue" class="queue-list">
+            <div class="empty-state">
+              <span class="empty-mark">+</span>
+              <p>还没有生成任务</p>
+              <span>从上方提交一个 YouTube 链接</span>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <footer class="footer-note">
+        <span>本地处理 · MP3 发布到 R2</span>
+        <span>RSS / R2 已启用</span>
+      </footer>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
